@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smartphone Recommendation Tool</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <nav class="bg-[#E34F4F] text-white px-4 py-3">
+    <div class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+      
+      <!-- Logo -->
+      <div class="mb-2 md:mb-0">
+        <h1 class="text-xl font-bold text-black">$mart$eek</h1>
+      </div>
+
+      <!-- Navigation Items -->
+      <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+
+        <!-- Home Link -->
+        <a href="#" class="hover:bg-white hover:text-[#E34F4F] px-3 py-2 rounded transition">Home</a>
+
+        <!-- Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 px-3 py-2 hover:bg-white hover:text-[#E34F4F] rounded transition">
+            Check Favourite <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="hidden group-hover:block absolute top-full left-0 bg-white text-black w-48 shadow-lg rounded mt-2 z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Apple</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Samsung</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Google</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">OnePlus</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Xiaomi</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Asus</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Sony</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Nothing</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Motorola</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#E34F4F] hover:text-white rounded">Realme</a>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class=" bg-white rounded-full px-14 py-1">
+          <input type="text" placeholder="Search your item" class="outline-none border-none text-black px-2 py-1 w-110 md:w-96 rounded-l-full" />
+          <button class="text-[#E34F4F] ">
+            <i class="fa fa-search text-[#E34F4F] px-0 py-0 "></i>
+          </button>
+        </div>
+
+        <!-- About Link -->
+        <a href="#" class="hover:bg-white hover:text-[#E34F4F] px-3 py-2 rounded transition">About Us</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Layout -->
+  <main class="p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <!-- Sidebar: Filters -->
+    <aside class="bg-white p-4 rounded-2xl shadow-md md:col-span-1">
+      <h2 class="text-xl font-semibold mb-4">🔍 Filter Preferences</h2>
+      <form id="phoneForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium">Select Brand</label>
+          <select id="brand" class="w-full mt-1 p-2 border rounded">
+            <option>Any</option>
+            <option>Apple</option>
+<option>Samsung</option>
+<option>Xiaomi</option>
+<option>OnePlus</option>
+<option>Realme</option>
+<option>Oppo</option>
+<option>Vivo</option>
+<option>Google</option>
+<option>Motorola</option>
+<option>Asus</option>
+<option>Nokia</option>
+<option>Honor</option>
+<option>Huawei</option>
+<option>Nothing</option>
+<option>Infinix</option>
+<option>iQOO</option>
+<option>Lenovo</option>
+<option>Micromax</option>
+<option>Lava</option>
+<option>Panasonic</option>
+<option>Meizu</option>
+<option>Coolpad</option>
+<option>HTC</option>
+<option>Gionee</option>
+<option>Alcatel</option>
+<option>Sharp</option>
+<option>Fairphone</option>
+<option>TCL</option>
+<option>BlackBerry</option>
+<option>BLU</option>
+<option>LeEco</option>
+<option>Philips</option>
+<option>Sony</option>
+<option>ZTE</option>
+<option>Karbonn</option>
+<option>Technomobile</option>
+<option>Celkon</option>
+<option>Maxwest</option>
+<option>Ulefone</option>
+<option>Doogee</option>
+<option>Elephone</option>
+<option>Cat Phones</option>
+<option>Energizer</option>
+<option>YotaPhone</option>
+<option>QMobile</option>
+<option>Wiko</option>
+<option>BQ</option>
+<option>Symphony</option>
+<option>Prestigio</option>
+<option>General Mobile</option>
+
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Max Price ($)</label>
+          <input type="number" id="priceLimit" class="w-full mt-1 p-2 border rounded" placeholder="e.g., 700" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Min Storage (GB)</label>
+          <input type="number" id="minStorage" class="w-full mt-1 p-2 border rounded" placeholder="e.g., 128" />
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Find Phones</button>
+      </form>
+    </aside>
+
+    <!-- Main Content: Recommendations -->
+    <section class="md:col-span-3 space-y-4">
+      <h2 class="text-xl font-semibold">📋 Recommended Smartphones</h2>
+
+      <!-- Example Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="phoneList">
+        <!-- Phone Card 1 -->
+        <div class="bg-white rounded-2xl shadow-md p-4">
+          <img src="https://via.placeholder.com/300x180" alt="Phone" class="rounded mb-2">
+          <h3 class="text-lg font-bold">Samsung Galaxy S22</h3>
+          <p class="text-sm text-gray-500">128GB • 8GB RAM</p>
+          <p class="mt-2 font-semibold">$699</p>
+          <button class="mt-2 bg-green-600 text-white w-full py-1 rounded hover:bg-green-700">View Details</button>
+        </div>
+
+        <!-- Phone Card 2 -->
+        <div class="bg-white rounded-2xl shadow-md p-4">
+          <img src="https://via.placeholder.com/300x180" alt="Phone" class="rounded mb-2">
+          <h3 class="text-lg font-bold">iPhone 14</h3>
+          <p class="text-sm text-gray-500">128GB • 6GB RAM</p>
+          <p class="mt-2 font-semibold">$799</p>
+          <button class="mt-2 bg-green-600 text-white w-full py-1 rounded hover:bg-green-700">View Details</button>
+        </div>
+         <!-- Phone Card 3 -->
+         <div class="bg-white rounded-2xl shadow-md p-4">
+          <img src="https://via.placeholder.com/300x180" alt="Phone" class="rounded mb-2">
+          <h3 class="text-lg font-bold"> Oppo Reno11 Pro</h3>
+          <p class="text-sm text-gray-500">128GB • 6GB RAM</p>
+          <p class="mt-2 font-semibold">$509</p>
+          <button class="mt-2 bg-green-600 text-white w-full py-1 rounded hover:bg-green-700">View Details</button>
+        </div>
+      </div>
+    </section>
+  </main>
+ 
+
+</body>
+</html>

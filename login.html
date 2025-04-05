@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" href="slidestyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <script>
+        // Function to display a pop-up message
+        function showMessage(type) {
+            let message = '';
+            if (type === 'signup') {
+                message = 'You have successfully signed up!';
+            } else if (type === 'login') {
+                message = 'You have successfully logged in!';
+            }
+
+            alert(message);  // Show the pop-up message
+        }
+
+        // Prevent form submission to simulate a successful login/signup
+        function handleFormSubmit(event, type) {
+            event.preventDefault();  // Prevent the actual form submission
+            showMessage(type);       // Show the pop-up message
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+
+        <input type="checkbox" id="chk" aria-hidden="true">
+        
+        <div class="signup">
+            <form onsubmit="handleFormSubmit(event, 'signup')">
+
+                <label for="chk" aria-hidden="true">Sign up</label>
+                
+                <input type="text" name="txt" placeholder="User name" required="">
+                
+                <input type="email" name="email" placeholder="Email" required="">
+                
+                <input type="Password" name="pswd" placeholder="Password" required="">
+                
+                <button type="submit">Sign up</button>
+                
+            </form>
+        </div>
+
+        <div class="login">
+            <form onsubmit="handleFormSubmit(event, 'login')">
+            
+                <label for="chk" aria-hidden="true">Login</label>
+            
+                <input type="email" name="email" placeholder="Email" required="">
+            
+                <input type="Password" name="pswd" placeholder="Password" required="">
+            
+                <button type="submit">Login</button>
+            
+            </form>
+        </div>
+    </div>
+</body>
+</html>
