@@ -1,0 +1,41 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<div class="container mx-auto px-6 py-12">
+  <h1 class="text-4xl font-bold text-center text-[#E34F4F] mb-10">Meet the Developers</h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Developer 1 -->
+    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+      <img src="{% static 'ravi.jpeg' %}" class="w-28 h-28 mx-auto rounded-full mb-4" alt="Developer 1">
+      <h2 class="text-xl font-semibold text-[#E34F4F]">Ravi Gupta</h2>
+      <p class="text-gray-600 text-sm mt-2">Backend Developer<br>Specialised in Django </p>
+    </div>
+
+    <!-- Developer 2 -->
+    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+      <img src="https://via.placeholder.com/120" class="w-28 h-28 mx-auto rounded-full mb-4" alt="Developer 2">
+      <h2 class="text-xl font-semibold text-[#E34F4F]">Pulkit Rana</h2>
+      <p class="text-gray-600 text-sm mt-2">Backend Developer<br>Specialised in Flask</p>
+    </div>
+
+    <!-- Developer 3 -->
+    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+      <img src="https://via.placeholder.com/120" class="w-28 h-28 mx-auto rounded-full mb-4" alt="Developer 3">
+      <h2 class="text-xl font-semibold text-[#E34F4F]">Shubham Banaula</h2>
+      <p class="text-gray-600 text-sm mt-2">Frontend Developer<br></p>
+    </div>
+
+    <!-- Developer 4 -->
+    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+      <img src="https://via.placeholder.com/120" class="w-28 h-28 mx-auto rounded-full mb-4" alt="Developer 4">
+      <h2 class="text-xl font-semibold text-[#E34F4F]">Rohit Bora</h2>
+      <p class="text-gray-600 text-sm mt-2">Data Scientist<br>Loves analyzing and visualizing data</p>
+    </div>
+  </div>
+</div>
+{% endblock body %}
