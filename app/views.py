@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login , logout
 import pandas as pd
 from django.http import JsonResponse
+from django.core.mail import send_mail  
+from django.views.decorators.csrf import csrf_exempt
 
 
 import os
@@ -225,4 +227,31 @@ def decide_better(phone1, phone2):
         return f"{phone2['name']} {phone2['model']}"
     else:
         return "Both are equally good"
+
+
+def contact_view(request):
+    message = None
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        user_message = request.POST.get('message')
+
+        print(f"Received contact: {name}, {email}, {user_message}")  # debug
+
+        contact = ContactMessage.objects.create(
+            name=name,
+            email=email,
+            message=user_message
+        )
+
+        print(f"Saved to DB: {contact}")  # debug
+
+        message = "Thank you for contacting us!"
+
+    return render(request, 'contact.html', {'message': message})
+def about_view(request):
+    return render(request, 'about.html')
+
+
 
